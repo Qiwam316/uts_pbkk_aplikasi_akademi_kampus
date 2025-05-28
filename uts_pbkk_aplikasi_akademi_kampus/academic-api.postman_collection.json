@@ -1,0 +1,623 @@
+{
+    "info": {
+        "_postman_id": "12345678-1234-1234-1234-123456789012",
+        "name": "Academic System API",
+        "description": "API for Academic System with Students, Courses, Lecturers, Enrollments",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "12345678"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000/api",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Students",
+            "item": [
+                {
+                    "name": "Get All Students",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/students",
+                            "host": ["{{base_url}}"],
+                            "path": ["students"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Student",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"nim\": \"2024001\",\n    \"major\": \"Computer Science\",\n    \"enrollment_year\": \"2024-01-15\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/students",
+                            "host": ["{{base_url}}"],
+                            "path": ["students"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Student by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/students/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["students", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Student",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"John Doe Updated\",\n    \"major\": \"Information Technology\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/students/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["students", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Student",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/students/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["students", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Courses",
+            "item": [
+                {
+                    "name": "Get All Courses",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/courses",
+                            "host": ["{{base_url}}"],
+                            "path": ["courses"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Course",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Data Structures and Algorithms\",\n    \"code\": \"CS101\",\n    \"credits\": \"3\",\n    \"semester\": \"1\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/courses",
+                            "host": ["{{base_url}}"],
+                            "path": ["courses"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Course by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/courses/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["courses", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Course",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Advanced Data Structures\",\n    \"credits\": \"4\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/courses/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["courses", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Course",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/courses/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["courses", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Lecturers",
+            "item": [
+                {
+                    "name": "Get All Lecturers",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/lecturers",
+                            "host": ["{{base_url}}"],
+                            "path": ["lecturers"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Lecturer",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Dr. Jane Smith\",\n    \"nip\": \"198501012010121001\",\n    \"department\": \"Computer Science\",\n    \"email\": \"jane.smith@university.ac.id\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/lecturers",
+                            "host": ["{{base_url}}"],
+                            "path": ["lecturers"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Lecturer by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/lecturers/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["lecturers", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Lecturer",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Prof. Dr. Jane Smith\",\n    \"department\": \"Information Technology\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/lecturers/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["lecturers", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Lecturer",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/lecturers/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["lecturers", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Enrollments",
+            "item": [
+                {
+                    "name": "Get All Enrollments",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/enrollments",
+                            "host": ["{{base_url}}"],
+                            "path": ["enrollments"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Enrollment",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"student_id\": \"01HXYZ123456789012345678\",\n    \"course_id\": \"01HXYZ987654321098765432\",\n    \"grade\": \"A\",\n    \"attendance\": \"95%\",\n    \"status\": \"Active\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/enrollments",
+                            "host": ["{{base_url}}"],
+                            "path": ["enrollments"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Enrollment by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/enrollments/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["enrollments", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Enrollment",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"grade\": \"A+\",\n    \"attendance\": \"98%\",\n    \"status\": \"Completed\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/enrollments/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["enrollments", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Enrollment",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/enrollments/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["enrollments", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Course Lecturers",
+            "item": [
+                {
+                    "name": "Get All Course Lecturers",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/course-lecturers",
+                            "host": ["{{base_url}}"],
+                            "path": ["course-lecturers"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Assign Lecturer to Course",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"course_id\": \"01HXYZ987654321098765432\",\n    \"lecturer_id\": \"01HXYZ111222333444555666\",\n    \"role\": \"Main Lecturer\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/course-lecturers",
+                            "host": ["{{base_url}}"],
+                            "path": ["course-lecturers"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Course Lecturer by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/course-lecturers/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["course-lecturers", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Course Lecturer",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"role\": \"Assistant Lecturer\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/course-lecturers/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["course-lecturers", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove Lecturer from Course",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/course-lecturers/01HXYZ123456789012345678",
+                            "host": ["{{base_url}}"],
+                            "path": ["course-lecturers", "01HXYZ123456789012345678"]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
